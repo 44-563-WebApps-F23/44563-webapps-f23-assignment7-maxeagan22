@@ -35,7 +35,7 @@
     <div id="penalty">
         Penalty is zero
     </div> <br> 
-    <div>
+    <div id="helpButton" onclick=help()>
         Click for help
     </div><br>
     <div id="help">
@@ -45,89 +45,173 @@
     <div class="container">
         <!-- Row 1 -->
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image0" onclick="check(0)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image1" onclick="check(1)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image2" onclick="check(2)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image3" onclick="check(3)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image4" onclick="check(4)" height="75" width="75">
         </div>
 
         <!-- Row 2 -->
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image5" onclick="check(5)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image6" onclick="check(6)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image7" onclick="check(7)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image8" onclick="check(8)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image9" onclick="check(9)" height="75" width="75">
         </div>
 
         <!-- Row 3 -->
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image10" onclick="check(10)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image11" onclick="check(11)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image12" onclick="check(12)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image13" onclick="check(13)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image14" onclick="check(14)" height="75" width="75">
         </div>
 
         <!-- Row 4 -->
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image15" onclick="check(15)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image16" onclick="check(16)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image17" onclick="check(17)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image18" onclick="check(18)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image19" onclick="check(19)" height="75" width="75">
         </div>
 
         <!-- Row 5 -->
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image20" onclick="check(20)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image21" onclick="check(21)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image22" onclick="check(22)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image23" onclick="check(23)" height="75" width="75">
         </div>
         <div class="location">
-            <img src="image1.jpg" alt="Starting image" height="75" width="75">
+            <img src="start.jpg" id="image24" onclick="check(24)" height="75" width="75">
         </div>
-    </div>
+
+        <script>
+            //Declare Array with 25 Strings
+            let ids = [
+                        "image0","image1","image2","image3","image4",
+                        "image5","image6","image7", "image8","image9",
+                        "image10","image11","image12","image13","image14",
+                        "image15","image16","image17","image18","image19",
+                        "image20","image21","image22","image23","image24"
+                        ];
+            //Declare variables
+            let checkCount = 0;
+            let penalty = 0;
+            let lastCheck = 0;
+            let treasureLocation = 5;
+            let trapLocation = 18;
+            let gameOver = false; 
+
+            //Function that checks position
+            function check (position){
+                if(gameOver){
+                    return;
+                }
+                let id =ids[position];
+                let image = document.getElementById(id);
+
+                //Change source of Treasure, Trap, or Pirate image
+                if (position === treasureLocation){
+                    image.src = "treasure.jpg";
+                    gameOver = true;
+                    penalty -= 3;
+                }
+                else if (position === trapLocation){
+                    image.src = "trap.jpg";
+                    gameOver = true;
+                    penalty += 4;
+                }
+                else{
+                    image.src = "pirateship.jpg";
+                }
+                //Add to checkCount and penalty
+                checkCount++;
+                penalty++; 
+
+                //Update text with id locations
+                document.getElementById("location").textContent = checkCount;
+
+                //Update text with penalty
+                document.getElementById("penalty").textContent = penalty;
+
+                //Update lastCheck
+                lastCheck = position;
+            }
+
+            //Help function
+            function help(){
+                //Calculate row, col, and last location
+                const treasureRow = Math.floor(treasureLocation/5);
+                const treasureCol = treasureRow % 5
+                const lastRow = Math.floor(lastCheck/5);
+                const lastCol = lastCheck % 5; 
+
+                //Calculate difference between rows and columns
+                const rowDiff = Math.abs(treasureRow - lastRow);
+                const colDiff = Math.abs(treasureCol - lastCol);
+
+                //Determine message
+                let message;
+                if((rowDiff <= 1 && colDiff <= 1 && rowDiff !== colDiff)){
+                    message = "Can smell it";
+                }
+                else if(rowDiff + colDiff === 2){
+                    message = "Close Matie";
+                }
+                else{
+                    message = "Step Faster";
+                }
+                penalty += 2;
+
+                document.getElementById("penalty").textContent = penalty;
+                document.getElementById("help").textContent = message;
+            }
+
+        </script>
+        
 
 </body>
 </html>
