@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Time Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h3>Max Eagan Speed Check</h3>
+
+  <div id="target">
+    Your time
+  </div>
+  <div id="count">
+    Count
+  </div>
+
+  <button id="startButton">
+    <label>Start Timer</label>
+  </button>
+  <button id="reactButton" onclick="recordTime()">
+    <label>React</label>
+  </button>
+
+  
+  <script> 
+    //Set variable to record time
+    let reactTime = undefined;
+
+    function recordTime(){
+        reactTime = Date.now();
+        console.log(reactTime);
+    }
+
+     function buttonPress1() {
+        setTimeout(function(){
+             document.getElementById('target').style.color = "red"
+    }, 3000)
+  }
+
+    function buttonPress2() {
+        setTimeout(()=>{
+        document.getElementById('target').style.color = "red"
+    }, 3000)
+  }
+  </script>
+
+</body>
+</html>
