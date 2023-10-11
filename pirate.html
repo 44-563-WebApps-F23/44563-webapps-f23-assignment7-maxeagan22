@@ -14,18 +14,20 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <style>
+        h2{text-align: center;}
+        div{text-align: center;}
         .container {
             display: grid;
             grid-template-columns: repeat(5, 75px); 
             grid-template-rows: repeat(5, 75px);
             gap: 10px;
-            justify-content: left;
+            justify-content: center;
         }
     </style>
 
 </head>
 <body>
-    <h3>Find your treasure by Max Eagan</h3>
+    <h2>Find your treasure by Max Eagan</h2>
     <div id="instructions">
         Click on the locations to search for treasure, beware of traps 
     </div><br>
@@ -172,7 +174,7 @@
                 penalty++; 
 
                 //Update text with id locations
-                document.getElementById("location").textContent = "Count is: " + checkCount;
+                document.getElementById("locations").textContent = "Count is: " + checkCount;
 
                 //Update text with penalty
                 document.getElementById("penalty").textContent = "Penalty is: " + penalty;
