@@ -172,10 +172,10 @@
                 penalty++; 
 
                 //Update text with id locations
-                document.getElementById("location").textContent = checkCount;
+                document.getElementById("location").textContent = "Count is: " + checkCount;
 
                 //Update text with penalty
-                document.getElementById("penalty").textContent = penalty;
+                document.getElementById("penalty").textContent = "Penalty is: " + penalty;
 
                 //Update lastCheck
                 lastCheck = position;
@@ -206,7 +206,7 @@
                 }
                 penalty += 2;
 
-                document.getElementById("penalty").textContent = penalty;
+                document.getElementById("penalty").textContent = "Penalty is: " + penalty;
                 document.getElementById("help").textContent = message;
             }
 
