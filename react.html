@@ -20,18 +20,45 @@
     Count
   </div>
 
-  <button id="startButton">
+  <button id="startButton" onclick="startTime()">
     <label>Start Timer</label>
   </button>
+
   <button id="reactButton" onclick="recordTime()">
     <label>React</label>
   </button>
+
+  <div id="countdown"></div>
 
   
   <script> 
     //Set variable to record time
     let reactTime = undefined;
 
+    //Function to set time after button is clicked
+    function startTime(){
+        //Loop to set countdown
+        for (let i = 0; i < 9; i++){
+            setTimeout(function(){
+                const countdownId = document.getElementById("countdown");
+                countdownId.innerHTML = i; 
+            }(8 - i ) * 1000);
+        }
+        setTimeout(function(){
+            if(reactTime === undefined){
+                const target = document.getElementById("target");
+                target.innerHTML = "Too Slow";
+            }
+            else{
+                const endTime = Date.now();
+                const reactionTime = endTime - reactTime; 
+                const target = document.getElementById("target");
+                target.innerHTML = ("Time was " + reactionTime + "ms");
+            }
+        },8000)
+    }
+
+    //Function to record time after button is clicked
     function recordTime(){
         reactTime = Date.now();
         console.log(reactTime);
